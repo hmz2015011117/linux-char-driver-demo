@@ -1,0 +1,1 @@
+savedcmd_/home/hmz/linux_driver_project/driver/Module.symvers :=  scripts/mod/modpost -M -m -a      -o /home/hmz/linux_driver_project/driver/Module.symvers -T /home/hmz/linux_driver_project/driver/modules.order -i Module.symvers -e 

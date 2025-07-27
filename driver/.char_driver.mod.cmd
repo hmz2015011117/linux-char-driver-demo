@@ -1,0 +1,1 @@
+savedcmd_/home/hmz/linux_driver_project/driver/char_driver.mod := printf '%s\n'   char_driver.o | awk '!x[$$0]++ { print("/home/hmz/linux_driver_project/driver/"$$0) }' > /home/hmz/linux_driver_project/driver/char_driver.mod

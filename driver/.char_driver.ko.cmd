@@ -1,0 +1,1 @@
+savedcmd_/home/hmz/linux_driver_project/driver/char_driver.ko := ld -r -m elf_x86_64 -z noexecstack --build-id=sha1  -T scripts/module.lds -o /home/hmz/linux_driver_project/driver/char_driver.ko /home/hmz/linux_driver_project/driver/char_driver.o /home/hmz/linux_driver_project/driver/char_driver.mod.o
