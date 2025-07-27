@@ -2,17 +2,18 @@
 
 A basic Linux kernel module demonstrating how to implement a simple character device driver with read/write support, along with a user-space test application.
 
-## 🛠 Project Structure
+## 📁 Project Structure
 
+```
 linux_driver_project/
-├── driver/ # 内核模块源代码
-│ ├── char_driver.c
-│ └── Makefile
-└── user/ # 用户态程序
-└── test_app.c
+├── driver/             # 内核模块源代码
+│   ├── char_driver.c
+│   └── Makefile
+└── user/               # 用户态程序
+    └── test_app.c
+```
 
-
-## 🚀 Features
+## ✨ Features
 
 - Basic character device registration
 - Supports `read()` and `write()` syscalls
@@ -20,35 +21,39 @@ linux_driver_project/
 - Custom `/dev` entry creation
 - Compatible with Linux kernel 5.x–6.x
 
-## 📦 Build & Run Instructions
+## 🔧 Build & Run Instructions
 
 ### 1. Install dependencies
 
 ```bash
 sudo apt update
 sudo apt install build-essential linux-headers-$(uname -r) gcc-12 -y
+```
 
 ### 2. Build kernel module
 
 ```bash
 cd driver
 make
+```
 
 ### 3. Insert module and check logs
 
 ```bash
 sudo insmod char_driver.ko
 dmesg | tail
+```
 
-Note the major device number printed.
+Note the **major device number** printed.
 
 ### 4. Create device node
 
 ```bash
 sudo mknod /dev/simple_char_dev c <major> 0
 sudo chmod 666 /dev/simple_char_dev
+```
 
-Replace <major> with actual major number from dmesg.
+Replace `<major>` with actual major number from `dmesg`.
 
 ### 5. Build and run user application
 
@@ -56,46 +61,32 @@ Replace <major> with actual major number from dmesg.
 cd ../user
 gcc test_app.c -o test_app
 ./test_app
+```
 
-###  6. Remove module when done
+### 6. Remove module when done
 
 ```bash
 sudo rmmod char_driver
+```
 
-📘 Example Output
-Wrote: Hello from user space!
-Read: Hello from user space!
+## 🧠 Learning Purpose
 
-Kernel log:
-Device opened
-Received 24 bytes: Hello from user space!
-Read 24 bytes
-Device closed
-
-🧠 Learning Purpose
 This project is part of my journey to become a Linux driver/embedded developer.
+
 It demonstrates key concepts like:
 
-register_chrdev
+- `register_chrdev`
+- `file_operations`
+- `copy_to_user` / `copy_from_user`
+- Module insert/remove
+- Kernel-user communication
 
-file_operations
+## 👤 Author
 
-copy_to_user / copy_from_user
+**hmz**  
+GitHub: [hmz2015011117](https://github.com/hmz2015011117)
 
-Module insert/remove
+## 📄 License
 
-Kernel-user communication
-
-👤 Author
-hmz (replace with your GitHub ID if public)
-
-Graduate majoring in Computer Tech with FPGA background
-
-Transitioning to Linux systems / driver development
-
-📝 License
 This project is open-sourced under the MIT license.
-
-
-
 
