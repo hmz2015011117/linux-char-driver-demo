@@ -1,5 +1,15 @@
 # Simple Linux Character Device Driver
 
+<p align="center">
+  <a href="https://github.com/hmz2015011117/linux-char-driver-demo/stargazers">
+    <img src="https://img.shields.io/github/stars/hmz2015011117/linux-char-driver-demo?style=flat-square&color=brightgreen" alt="Stars">
+  </a>
+  <a href="https://github.com/hmz2015011117/linux-char-driver-demo/blob/master/LICENSE">
+    <img src="https://img.shields.io/github/license/hmz2015011117/linux-char-driver-demo?style=flat-square&color=blue" alt="License">
+  </a>
+  <img src="https://img.shields.io/github/languages/top/hmz2015011117/linux-char-driver-demo?style=flat-square&color=orange" alt="Top Language">
+</p>
+
 A basic Linux kernel module demonstrating how to implement a simple character device driver with read/write support, along with a user-space test application.
 
 ## 📁 Project Structure
